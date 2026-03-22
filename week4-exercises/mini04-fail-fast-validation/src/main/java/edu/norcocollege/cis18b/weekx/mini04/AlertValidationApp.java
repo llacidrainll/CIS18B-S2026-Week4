@@ -6,8 +6,19 @@ public class AlertValidationApp {
 
         Alert validAlert = new Alert(1, "CPU usage high", AlertLevel.WARNING);
         Alert invalidAlert = new Alert(2, "   ", null);
+        try {
+            validator.validate(validAlert);
+            System.out.println("Valid alert processed successfully.");
+        } catch (InvalidAlertException ex) {
+            System.out.println("Error: " + ex.getMessage());
+        }
 
-        // TODO: Validate the valid alert and print a success message.
-        // TODO: Validate the invalid alert and print the exception message.
+        // Validate invalid alert
+        try {
+            validator.validate(invalidAlert);
+            System.out.println("Valid alert processed successfully.");
+        } catch (InvalidAlertException ex) {
+            System.out.println("Error: " + ex.getMessage());
+        }
     }
 }

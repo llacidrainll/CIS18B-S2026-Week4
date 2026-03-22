@@ -5,9 +5,20 @@ public class BuiltInExceptionDemo {
         int numerator = 10;
         int denominator = 0;
         String[] alerts = {"CPU High", "Disk Full", "Login Failure"};
-
+        
         // TODO: Use try/catch to handle division by zero.
         // Expected friendly message example: Cannot divide by zero.
+        try {int result = numerator/denominator;
+            System.out.println("Result: " + result)
+        }
+        catch (ArithmeticException ex)
+        {
+            System.out.println("Cannot divide by zero.")
+        }
+        
+        try {
+            
+        }
 
         // TODO: Use try/catch to handle an invalid alert index.
         // Purposely try an out-of-range index so the catch block runs.

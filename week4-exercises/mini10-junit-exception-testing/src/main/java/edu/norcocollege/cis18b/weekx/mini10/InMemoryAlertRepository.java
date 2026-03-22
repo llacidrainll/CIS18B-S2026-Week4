@@ -16,6 +16,6 @@ public class InMemoryAlertRepository implements AlertRepository {
 
     @Override
     public List<Alert> findAll() {
-        return new ArrayList<>(alerts); // Return a copy to avoid external modification
+        return new ArrayList<>(alerts); 
     }
 }
